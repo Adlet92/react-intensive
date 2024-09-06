@@ -4,7 +4,6 @@ import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
 import LoginForm from './Components/LoginForm/LoginForm';
 import Sidebar from './Components/Sidebar/Sidebar';
-import { getCurrentUser } from './services/authServices';
 
 function App() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -16,7 +15,7 @@ function App() {
     const token = localStorage.getItem('token');
     if (token) {
       setIsLoggedIn(true);
-      fetchUserData(token);
+      // fetchUserData(token);
     } else {
       setLoading(false);
     }
@@ -34,16 +33,16 @@ function App() {
     };
   }, []);
 
-  const fetchUserData = async (token: string) => {
-    try {
-      const user = await getCurrentUser(token);
-      setUserData({ image: user.image });
-    } catch (err) {
-      console.error('Failed to fetch user data:', err);
-    } finally {
-      setLoading(false);
-    }
-  };
+  // const fetchUserData = async (token: string) => {
+  //   try {
+  //     const user = await getCurrentUser(token);
+  //     setUserData({ image: user.image });
+  //   } catch (err) {
+  //     console.error('Failed to fetch user data:', err);
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -51,7 +50,7 @@ function App() {
 
   const handleLogout = () => {
     localStorage.removeItem('token');
-    localStorage.removeItem('refreshToken');
+    // localStorage.removeItem('refreshToken');
     setIsLoggedIn(false);
     setUserData(null);
   };

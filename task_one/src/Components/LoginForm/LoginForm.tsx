@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { getCurrentUser, login } from '../../services/authServices';
+import { login } from '../../services/authServices';
 import '../LoginForm/LoginForm.css';
 import FormButtons from './Buttons/Buttons';
 import InputField from './Inputs/Inputs';
@@ -14,6 +14,28 @@ const LoginForm: React.FC<LoginFormProps> = ({ setIsLoggedIn, setUserData }) => 
   const [password, setPassword] = useState('');
   const [error, setError] = useState<string | null>(null);
 
+  // const handleLogin = async () => {
+  //   if (!username) {
+  //     setError('Please write your username.');
+  //     return;
+  //   }
+  //   if (!password) {
+  //     setError('Please write your password.');
+  //     return;
+  //   }
+
+  //   try {
+  //     const data = await login(username, password);
+  //     console.log('Login successful:', data);
+  //     localStorage.setItem('token', data.token);
+  //     // localStorage.setItem('refreshToken', data.refreshToken);
+  //     // const user = await getCurrentUser(data.token);
+  //     setUserData({ image: data.image });
+  //     setIsLoggedIn(true);
+  //   } catch (err) {
+  //     setError('Login failed. Please check your credentials.');
+  //   }
+  // };
   const handleLogin = async () => {
     if (!username) {
       setError('Please write your username.');
@@ -27,10 +49,8 @@ const LoginForm: React.FC<LoginFormProps> = ({ setIsLoggedIn, setUserData }) => 
     try {
       const data = await login(username, password);
       console.log('Login successful:', data);
-      localStorage.setItem('token', data.token);
-      localStorage.setItem('refreshToken', data.refreshToken);
-      const user = await getCurrentUser(data.token);
-      setUserData({ image: user.image });
+      localStorage.setItem('token', data.token); // You can remove this if you don't need tokens.
+      setUserData({ image: '' }); // Assuming no image in your users.json
       setIsLoggedIn(true);
     } catch (err) {
       setError('Login failed. Please check your credentials.');
