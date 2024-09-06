@@ -15,7 +15,6 @@ function App() {
     const token = localStorage.getItem('token');
     if (token) {
       setIsLoggedIn(true);
-      // fetchUserData(token);
     } else {
       setLoading(false);
     }
@@ -33,24 +32,12 @@ function App() {
     };
   }, []);
 
-  // const fetchUserData = async (token: string) => {
-  //   try {
-  //     const user = await getCurrentUser(token);
-  //     setUserData({ image: user.image });
-  //   } catch (err) {
-  //     console.error('Failed to fetch user data:', err);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
   const handleLogout = () => {
     localStorage.removeItem('token');
-    // localStorage.removeItem('refreshToken');
     setIsLoggedIn(false);
     setUserData(null);
   };
