@@ -1,0 +1,13 @@
+.copyrightText {
+  width: 100%;
+  background: #070738;
+  padding: 15px 50px 0px;
+  text-align: end;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .copyrightText {
+    padding: 20px 50px 0px;
+  }
+}

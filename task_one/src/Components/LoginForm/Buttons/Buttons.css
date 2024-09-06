@@ -1,0 +1,32 @@
+.button-container {
+  display: flex;
+  justify-content: end;
+  margin-top: 50px;
+}
+
+.button-container button {
+  width: 40%;
+  height: 45px;
+  border: 2px solid grey;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 10px;
+}
+
+.cancel-btn {
+  background-color: #fff;
+  color: grey;
+  margin-right: 10px;
+}
+
+.login-btn {
+  background-color: grey;
+  color: #fff;
+}
+@media (max-width: 768px) {
+  .button-container button{
+    width: 45%;
+  }
+}
