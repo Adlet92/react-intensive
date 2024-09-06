@@ -1,8 +1,3 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
 
 In the project directory, you can run:
 
@@ -14,33 +9,52 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+By opening the following link http://localhost:3000 the web page should be opened.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p align="center">
+  <img src="./src/Components/Assets/screenshot1.JPG" width="400" />
+</p>
 
-### `npm run build`
+You can login with the following user's credentials in users.json
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```[
+  {
+    "id": 1,
+    "username": "testuser1",
+    "password": "password123"
+  },
+  {
+    "id": 2,
+    "username": "testuser2",
+    "password": "password456"
+  }
+]
+```
+After a successful login you receive Login successful sign
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+<p align="center">
+  <img src="./src/Components/Assets/screenshot16.JPG" width="400" />
+</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+For fully functionality on all devices web page is responsible
 
-### `npm run eject`
+<p align="center">
+  <img src="./src/Components/Assets/screenshot7.JPG" width="400" />
+</p>
+<p align="center">
+  <img src="./src/Components/Assets/screenshot10.JPG" width="400" />
+</p>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+When the username or password is incorrect the error appears also when there is not written of the input.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<p align="center">
+  <img src="./src/Components/Assets/screenshot13.JPG" width="400" />
+</p>
+<p align="center">
+  <img src="./src/Components/Assets/screenshot14.JPG" width="400" />
+</p>
+<p align="center">
+  <img src="./src/Components/Assets/screenshot15.JPG" width="400" />
+</p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Cancel button cleans the username, password and error if it appears in the login form.
